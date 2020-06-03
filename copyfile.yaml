@@ -1,0 +1,8 @@
+---
+- hosts: Application_Servers
+  become: true
+  tasks:
+   - name: Copy files from Ansible to Tomcat Server
+     copy:
+      src: /opt/playbooks/webapp/target/webapp.war
+      dest: /opt/apache-tomcat-8.5.55/webapps
